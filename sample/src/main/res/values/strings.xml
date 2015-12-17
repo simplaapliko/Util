@@ -1,3 +1,23 @@
+<!--
+  ~ Copyright (C) 2014-2015 Oleg Kan, @Simplaapliko
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
 <resources>
-    <string name="app_name">Util</string>
+    <string name="app_name">Util Sample</string>
+    <string name="get_app_version">Get app version</string>
+    <string name="get_app_version_name">Get app version name</string>
+    <string name="get_app_version_code">Get app version code</string>
+    <string name="send_feedback">Send feedback</string>
 </resources>
