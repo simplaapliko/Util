@@ -86,7 +86,7 @@ public final class Feedback {
         feedback.setData(uri);
         context.startActivity(Intent.createChooser(
                 feedback,
-                context.getString(R.string.dialog_feedback_intent_chooser_title)));
+                context.getString(R.string.feedback_dialog_intent_chooser_title)));
 
     }
 
