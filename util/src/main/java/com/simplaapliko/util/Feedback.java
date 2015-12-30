@@ -16,11 +16,11 @@
 
 package com.simplaapliko.util;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 
 import java.util.Locale;
@@ -55,7 +55,7 @@ public final class Feedback {
         body.append(newLine);
 
         DisplayMetrics dm = new DisplayMetrics();
-        ((AppCompatActivity) context).getWindowManager().getDefaultDisplay().getMetrics(dm);
+        ((Activity) context).getWindowManager().getDefaultDisplay().getMetrics(dm);
         int width = dm.widthPixels;
         int height = dm.heightPixels;
 
