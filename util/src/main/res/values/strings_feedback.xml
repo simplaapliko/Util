@@ -16,14 +16,14 @@
   -->
 
 <resources>
-    <string name="feedback_subject">Feedback</string>
-    <string name="feedback_dialog_intent_chooser_title">Complete action using</string>
-    <string name="feedback_device">Device:</string>
-    <string name="feedback_android_version">Android version:</string>
-    <string name="feedback_app_version">App version:</string>
-    <string name="feedback_region">Language / Region:</string>
-    <string name="feedback_screen">Screen:</string>
-    <string name="feedback_screen_width">width:</string>
-    <string name="feedback_screen_height">height:</string>
-    <string name="feedback_message">Write about your problem or suggestion.\nThank you!\n_____</string>
+    <string name="u_feedback_subject">Feedback</string>
+    <string name="u_feedback_dialog_intent_chooser_title">Complete action using</string>
+    <string name="u_feedback_device">Device:</string>
+    <string name="u_feedback_android_version">Android version:</string>
+    <string name="u_feedback_app_version">App version:</string>
+    <string name="u_feedback_region">Language / Region:</string>
+    <string name="u_feedback_screen">Screen:</string>
+    <string name="u_feedback_screen_width">width:</string>
+    <string name="u_feedback_screen_height">height:</string>
+    <string name="u_feedback_message">Write about your problem or suggestion.\nThank you!\n_____</string>
 </resources>
