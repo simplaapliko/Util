@@ -16,23 +16,22 @@
 
 package com.simplaapliko.util.sample;
 
-import android.support.v4.app.Fragment;
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
-import com.simplaapliko.util.AppInfo;
-import com.simplaapliko.util.Feedback;
+import com.simplaapliko.util.Screen;
 
 /**
  * A placeholder fragment containing a simple view.
  */
 public class MainActivityFragment extends Fragment implements View.OnClickListener {
 
-    private TextView mAppVersion;
+    private TextView mMessage;
 
     public MainActivityFragment() {
     }
@@ -42,18 +41,9 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
-        mAppVersion = (TextView) rootView.findViewById(R.id.app_version);
+        mMessage = (TextView) rootView.findViewById(R.id.message);
 
-        rootView.findViewById(R.id.get_version)
-                .setOnClickListener(this);
-
-        rootView.findViewById(R.id.get_version_name)
-                .setOnClickListener(this);
-
-        rootView.findViewById(R.id.get_version_code)
-                .setOnClickListener(this);
-
-        rootView.findViewById(R.id.send_feedback)
+        rootView.findViewById(R.id.get_screen_orientation)
                 .setOnClickListener(this);
 
         return rootView;
@@ -62,17 +52,20 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.get_version:
-                mAppVersion.setText(AppInfo.getAppVersion(getContext()));
-                break;
-            case R.id.get_version_name:
-                mAppVersion.setText(AppInfo.getAppVersionName(getContext()));
-                break;
-            case R.id.get_version_code:
-                mAppVersion.setText(String.valueOf(AppInfo.getAppVersionCode(getContext())));
-                break;
-            case R.id.send_feedback:
-                Feedback.sendFeedback(getContext(), "myEmail@mail.com", "Util");
+            case R.id.get_screen_orientation:
+
+                switch (Screen.getOrientation(getActivity())) {
+                    case Configuration.ORIENTATION_PORTRAIT:
+                        mMessage.setText(R.string.portrait);
+                        break;
+                    case Configuration.ORIENTATION_LANDSCAPE:
+                        mMessage.setText(R.string.landscape);
+                        break;
+                    case Configuration.ORIENTATION_SQUARE:
+                        mMessage.setText(R.string.square);
+                        break;
+                }
+
                 break;
         }
     }

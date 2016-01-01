@@ -16,8 +16,11 @@
 
 <resources>
     <string name="app_name">Util Sample</string>
-    <string name="get_app_version">Get app version</string>
-    <string name="get_app_version_name">Get app version name</string>
-    <string name="get_app_version_code">Get app version code</string>
-    <string name="send_feedback">Send feedback</string>
+    <string name="get_screen_orientation">Get screen orientation</string>
+
+    <string name="portrait">portrait</string>
+    <string name="landscape">landscape</string>
+    <string name="square">square</string>
+
+
 </resources>
