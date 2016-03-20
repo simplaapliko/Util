@@ -26,8 +26,12 @@ public interface Analytics {
         GLOBAL_TRACKER // Tracker used by all the apps.
     }
 
-    void sendScreen(TrackerName trackerId, int screen);
+    void sendScreen(TrackerName trackerId, String screen);
 
-    void sendEvent(TrackerName trackerId, int category, int action, int label);
+    void sendScreen(TrackerName trackerId, int screenId);
+
+    void sendEvent(TrackerName trackerId, String category, String action, String label);
+
+    void sendEvent(TrackerName trackerId, int categoryId, int actionId, int labelId);
 
 }

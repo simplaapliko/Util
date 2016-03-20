@@ -45,9 +45,7 @@ public final class GoogleAnalyticsImpl implements Analytics {
     // class methods
 
     @Override
-    public void sendScreen(TrackerName trackerId, int screenId) {
-        String screen = mContext.getString(screenId);
-
+    public void sendScreen(TrackerName trackerId, String screen) {
         Log.d(TAG, "sendScreen(), screen = " + screen);
 
         Tracker t = getTracker(trackerId);
@@ -60,11 +58,12 @@ public final class GoogleAnalyticsImpl implements Analytics {
     }
 
     @Override
-    public void sendEvent(TrackerName trackerId, int categoryId, int actionId, int labelId) {
-        String category = mContext.getString(categoryId);
-        String action = mContext.getString(actionId);
-        String label = mContext.getString(labelId);
+    public void sendScreen(TrackerName trackerId, int screenId) {
+        sendScreen(trackerId, mContext.getString(screenId));
+    }
 
+    @Override
+    public void sendEvent(TrackerName trackerId, String category, String action, String label) {
         Log.d(TAG, "sendEvent(), category = " + category + ", action = " + action + ", label = " + label);
 
         Tracker t = getTracker(trackerId);
@@ -75,6 +74,14 @@ public final class GoogleAnalyticsImpl implements Analytics {
                 .setAction(action)
                 .setLabel(label)
                 .build());
+    }
+
+    @Override
+    public void sendEvent(TrackerName trackerId, int categoryId, int actionId, int labelId) {
+        sendEvent(trackerId,
+                mContext.getString(categoryId),
+                mContext.getString(actionId),
+                mContext.getString(labelId));
     }
 
     private synchronized Tracker getTracker(TrackerName trackerId) {
