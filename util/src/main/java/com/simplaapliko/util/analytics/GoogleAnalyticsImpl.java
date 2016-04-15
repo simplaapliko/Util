@@ -77,11 +77,59 @@ public final class GoogleAnalyticsImpl implements Analytics {
     }
 
     @Override
+    public void sendEvent(TrackerName trackerId, String category, String action, int labelId) {
+        sendEvent(trackerId,
+                category,
+                action,
+                mContext.getString(labelId));
+    }
+
+    @Override
+    public void sendEvent(TrackerName trackerId, String category, int actionId, String label) {
+        sendEvent(trackerId,
+                category,
+                mContext.getString(actionId),
+                label);
+    }
+
+    @Override
+    public void sendEvent(TrackerName trackerId, String category, int actionId, int labelId) {
+        sendEvent(trackerId,
+                category,
+                mContext.getString(actionId),
+                mContext.getString(labelId));
+    }
+
+    @Override
     public void sendEvent(TrackerName trackerId, int categoryId, int actionId, int labelId) {
         sendEvent(trackerId,
                 mContext.getString(categoryId),
                 mContext.getString(actionId),
                 mContext.getString(labelId));
+    }
+
+    @Override
+    public void sendEvent(TrackerName trackerId, int categoryId, int actionId, String label) {
+        sendEvent(trackerId,
+                mContext.getString(categoryId),
+                mContext.getString(actionId),
+                label);
+    }
+
+    @Override
+    public void sendEvent(TrackerName trackerId, int categoryId, String action, int labelId) {
+        sendEvent(trackerId,
+                mContext.getString(categoryId),
+                action,
+                mContext.getString(labelId));
+    }
+
+    @Override
+    public void sendEvent(TrackerName trackerId, int categoryId, String action, String label) {
+        sendEvent(trackerId,
+                mContext.getString(categoryId),
+                action,
+                label);
     }
 
     private synchronized Tracker getTracker(TrackerName trackerId) {
