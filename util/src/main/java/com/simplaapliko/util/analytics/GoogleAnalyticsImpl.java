@@ -147,5 +147,4 @@ public final class GoogleAnalyticsImpl implements Analytics {
 
         return mTrackers.get(trackerId);
     }
-
 }
