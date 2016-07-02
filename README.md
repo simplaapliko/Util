@@ -1,4 +1,6 @@
 # Util
+[![Build Status](https://travis-ci.org/simplaapliko/Util.svg)](https://travis-ci.org/simplaapliko/Util)
+
 A simple library to get basic information about the application.
 
 ## Usage
@@ -12,7 +14,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.simplaapliko:util:0.9.9'
+    compile 'com.simplaapliko:util:0.9.10'
 }
 ```
 
