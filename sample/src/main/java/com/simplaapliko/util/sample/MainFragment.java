@@ -26,14 +26,11 @@ import android.widget.TextView;
 
 import com.simplaapliko.util.Screen;
 
-/**
- * A placeholder fragment containing a simple view.
- */
-public class MainActivityFragment extends Fragment implements View.OnClickListener {
+public class MainFragment extends Fragment implements View.OnClickListener {
 
     private TextView mMessage;
 
-    public MainActivityFragment() {
+    public MainFragment() {
     }
 
     @Override
