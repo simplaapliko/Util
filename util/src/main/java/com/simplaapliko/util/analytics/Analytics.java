@@ -28,21 +28,5 @@ public interface Analytics {
 
     void sendScreen(TrackerName trackerId, String screen);
 
-    void sendScreen(TrackerName trackerId, int screenId);
-
     void sendEvent(TrackerName trackerId, String category, String action, String label);
-
-    void sendEvent(TrackerName trackerId, String category, String action, int labelId);
-
-    void sendEvent(TrackerName trackerId, String category, int actionId, String label);
-
-    void sendEvent(TrackerName trackerId, String category, int actionId, int labelId);
-
-    void sendEvent(TrackerName trackerId, int categoryId, int actionId, int labelId);
-
-    void sendEvent(TrackerName trackerId, int categoryId, int actionId, String label);
-
-    void sendEvent(TrackerName trackerId, int categoryId, String action, int labelId);
-
-    void sendEvent(TrackerName trackerId, int categoryId, String action, String label);
 }

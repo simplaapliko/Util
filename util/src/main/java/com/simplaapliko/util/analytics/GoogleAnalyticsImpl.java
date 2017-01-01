@@ -34,15 +34,9 @@ public final class GoogleAnalyticsImpl implements Analytics {
     private Map<TrackerName, Tracker> mTrackers = new HashMap<>();
     private final Context mContext;
 
-
-    // constructors
-
     public GoogleAnalyticsImpl(Context context) {
         mContext = context.getApplicationContext();
     }
-
-
-    // class methods
 
     @Override
     public void sendScreen(TrackerName trackerId, String screen) {
@@ -54,12 +48,8 @@ public final class GoogleAnalyticsImpl implements Analytics {
         t.setScreenName(screen);
 
         // Send a screen view.
-        t.send(new HitBuilders.ScreenViewBuilder().build());
-    }
-
-    @Override
-    public void sendScreen(TrackerName trackerId, int screenId) {
-        sendScreen(trackerId, mContext.getString(screenId));
+        t.send(new HitBuilders.ScreenViewBuilder()
+                .build());
     }
 
     @Override
@@ -74,62 +64,6 @@ public final class GoogleAnalyticsImpl implements Analytics {
                 .setAction(action)
                 .setLabel(label)
                 .build());
-    }
-
-    @Override
-    public void sendEvent(TrackerName trackerId, String category, String action, int labelId) {
-        sendEvent(trackerId,
-                category,
-                action,
-                mContext.getString(labelId));
-    }
-
-    @Override
-    public void sendEvent(TrackerName trackerId, String category, int actionId, String label) {
-        sendEvent(trackerId,
-                category,
-                mContext.getString(actionId),
-                label);
-    }
-
-    @Override
-    public void sendEvent(TrackerName trackerId, String category, int actionId, int labelId) {
-        sendEvent(trackerId,
-                category,
-                mContext.getString(actionId),
-                mContext.getString(labelId));
-    }
-
-    @Override
-    public void sendEvent(TrackerName trackerId, int categoryId, int actionId, int labelId) {
-        sendEvent(trackerId,
-                mContext.getString(categoryId),
-                mContext.getString(actionId),
-                mContext.getString(labelId));
-    }
-
-    @Override
-    public void sendEvent(TrackerName trackerId, int categoryId, int actionId, String label) {
-        sendEvent(trackerId,
-                mContext.getString(categoryId),
-                mContext.getString(actionId),
-                label);
-    }
-
-    @Override
-    public void sendEvent(TrackerName trackerId, int categoryId, String action, int labelId) {
-        sendEvent(trackerId,
-                mContext.getString(categoryId),
-                action,
-                mContext.getString(labelId));
-    }
-
-    @Override
-    public void sendEvent(TrackerName trackerId, int categoryId, String action, String label) {
-        sendEvent(trackerId,
-                mContext.getString(categoryId),
-                action,
-                label);
     }
 
     private synchronized Tracker getTracker(TrackerName trackerId) {

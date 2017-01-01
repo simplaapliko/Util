@@ -23,5 +23,4 @@ public class AnalyticsFactory {
     public static GoogleAnalyticsImpl getGoogleAnalytics(Context context) {
         return new GoogleAnalyticsImpl(context);
     }
-
 }
