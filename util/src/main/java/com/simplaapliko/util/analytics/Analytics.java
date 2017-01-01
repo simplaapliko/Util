@@ -29,4 +29,6 @@ public interface Analytics {
     void sendScreen(TrackerName trackerId, String screen);
 
     void sendEvent(TrackerName trackerId, String category, String action, String label);
+
+    void sendCampaign(TrackerName trackerId, String campaignData);
 }

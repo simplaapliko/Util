@@ -66,6 +66,18 @@ public final class GoogleAnalyticsImpl implements Analytics {
                 .build());
     }
 
+    @Override
+    public void sendCampaign(TrackerName trackerId, String campaignData) {
+        Log.d(TAG, "sendCampaign(), campaignData = " + campaignData);
+
+        Tracker t = getTracker(trackerId);
+
+        // Build and send an Campaign.
+        t.send(new HitBuilders.ScreenViewBuilder()
+                .setCampaignParamsFromUrl(campaignData)
+                .build());
+    }
+
     private synchronized Tracker getTracker(TrackerName trackerId) {
         if (!mTrackers.containsKey(trackerId)) {
 
