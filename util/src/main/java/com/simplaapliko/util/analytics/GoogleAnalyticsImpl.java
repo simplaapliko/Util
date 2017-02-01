@@ -17,11 +17,11 @@
 package com.simplaapliko.util.analytics;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
+import com.simplaapliko.util.LogManager;
 import com.simplaapliko.util.R;
 
 import java.util.HashMap;
@@ -40,7 +40,7 @@ public final class GoogleAnalyticsImpl implements Analytics {
 
     @Override
     public void sendScreen(TrackerName trackerId, String screen) {
-        Log.d(TAG, "sendScreen(), screen = " + screen);
+        LogManager.log(TAG, "sendScreen(), screen = " + screen);
 
         Tracker t = getTracker(trackerId);
 
@@ -54,7 +54,7 @@ public final class GoogleAnalyticsImpl implements Analytics {
 
     @Override
     public void sendEvent(TrackerName trackerId, String category, String action, String label) {
-        Log.d(TAG, "sendEvent(), category = " + category + ", action = " + action + ", label = " + label);
+        LogManager.log(TAG, "sendEvent(), category = " + category + ", action = " + action + ", label = " + label);
 
         Tracker t = getTracker(trackerId);
 
@@ -68,7 +68,7 @@ public final class GoogleAnalyticsImpl implements Analytics {
 
     @Override
     public void sendCampaign(TrackerName trackerId, String campaignData) {
-        Log.d(TAG, "sendCampaign(), campaignData = " + campaignData);
+        LogManager.log(TAG, "sendCampaign(), campaignData = " + campaignData);
 
         Tracker t = getTracker(trackerId);
 
