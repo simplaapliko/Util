@@ -14,8 +14,12 @@
   ~ limitations under the License.
   -->
 
-<manifest package="com.simplaapliko.util">
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.simplaapliko.util">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application />
 
 </manifest>
