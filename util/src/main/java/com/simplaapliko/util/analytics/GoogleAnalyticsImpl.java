@@ -54,7 +54,8 @@ public final class GoogleAnalyticsImpl implements Analytics {
 
     @Override
     public void sendEvent(TrackerName trackerId, String category, String action, String label) {
-        LogManager.log(TAG, "sendEvent(), category = " + category + ", action = " + action + ", label = " + label);
+        LogManager.log(TAG, "sendEvent(), category = " + category + ", action = " + action
+                + ", label = " + label);
 
         Tracker t = getTracker(trackerId);
 
@@ -63,6 +64,22 @@ public final class GoogleAnalyticsImpl implements Analytics {
                 .setCategory(category)
                 .setAction(action)
                 .setLabel(label)
+                .build());
+    }
+
+    @Override
+    public void sendEvent(TrackerName trackerId, String category, String action, String label, long value) {
+        LogManager.log(TAG, "sendEvent(), category = " + category + ", action = " + action
+                + ", label = " + label + ", value = " + value);
+
+        Tracker t = getTracker(trackerId);
+
+        // Build and send an Event.
+        t.send(new HitBuilders.EventBuilder()
+                .setCategory(category)
+                .setAction(action)
+                .setLabel(label)
+                .setValue(value)
                 .build());
     }
 

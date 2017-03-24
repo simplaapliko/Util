@@ -30,5 +30,7 @@ public interface Analytics {
 
     void sendEvent(TrackerName trackerId, String category, String action, String label);
 
+    void sendEvent(TrackerName trackerId, String category, String action, String label, long value);
+
     void sendCampaign(TrackerName trackerId, String campaignData);
 }
